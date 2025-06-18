@@ -7,7 +7,7 @@ const axios = require('axios')
 cmd({
   pattern: "quran",
   alias: ["surah"],
-  react: "🙏",
+  react: "🤍",
   desc: "Get Quran Surah details and explanation.",
   category: "main",
   filename: __filename
@@ -59,7 +59,7 @@ ${translatedTafsirEnglish.text}`;
     await conn.sendMessage(
       from,
       {
-        image: { url: `https://i.ibb.co/W4xhtdW8/nexus-xmd.jpg` },
+        image: { url: `https://files.catbox.moe/8fy6up.jpg` },
         caption: quranSurah,
         contextInfo: {
           mentionedJid: [m.sender], 
@@ -67,7 +67,7 @@ ${translatedTafsirEnglish.text}`;
           isForwarded: true,   
           forwardedNewsletterMessageInfo: {
             newsletterJid: '120363288304618280@newsletter', 
-            newsletterName: 'NEXUS-XMD', 
+            newsletterName: 'Pkdriller', 
             serverMessageId: 143
           }
         }
@@ -95,12 +95,12 @@ cmd({
     alias: ["surahmenu", "surahlist"],
     desc: "menu the bot",
     category: "menu",
-    react: "🙏",
+    react: "❤️",
     filename: __filename
 }, 
 async (conn, mek, m, { from, quoted, body,isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
     try {
-        let dec = `🇰🇪  ⊷┈ *QURAN KAREEM* ┈⊷  🤍
+        let dec = `❤️  ⊷┈ *QURAN KAREEM* ┈⊷  🤍
 
  💫 𝘈𝘭𝘭 𝘴𝘶𝘳𝘢𝘩 𝘢𝘯𝘥 𝘵𝘩𝘦𝘪𝘳 𝘯𝘶𝘮𝘣𝘦𝘳𝘴 𝘭𝘪𝘴𝘵
 𝘧𝘰𝘳 𝘨𝘦𝘵𝘵𝘪𝘯𝘨 𝘴𝘶𝘳𝘢𝘩 𝘵𝘺𝘱𝘦 .𝘴𝘶𝘳𝘢𝘩 36 💫🌸 
@@ -449,7 +449,7 @@ async (conn, mek, m, { from, quoted, body,isCmd, command, args, q, isGroup, send
         await conn.sendMessage(
             from,
             {
-                image: { url: `https://i.ibb.co/W4xhtdW8/nexus-xmd.jpg` },
+                image: { url: `https://files.catbox.moe/yek5ca.jpg` },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -457,7 +457,7 @@ async (conn, mek, m, { from, quoted, body,isCmd, command, args, q, isGroup, send
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363288304618280@newsletter',
-                        newsletterName: 'NEXUS-XMD',
+                        newsletterName: 'Nexus xmd',
                         serverMessageId: 143
                     }
                 }
@@ -465,6 +465,12 @@ async (conn, mek, m, { from, quoted, body,isCmd, command, args, q, isGroup, send
             { quoted: mek }
         );
 
+        await conn.sendMessage(from, {
+            audio: { url: 'https://files.catbox.moe/6j2z63.mp3' },
+            mimetype: 'audio/mp4',
+            ptt: false
+        }, { quoted: mek });
+        
     } catch (e) {
         console.log(e);
         reply(`${e}`);

@@ -28,7 +28,7 @@ let dec = `
 
 ⟣──────────────────⟢
 
-> 🔥 NEXUS-BOT 🔥 
+> ☣️ NEXUS-BOT ☣️ 
 
 ⟣──────────────────⟢
 ${readMore}
@@ -37,11 +37,11 @@ https://whatsapp.com/channel/0029Vad7YNyJuyA77CtIPX0x
 
 \ GROUP\ 👥
 
-https://chat.whatsapp.com/CP8daWdavnXF11826hxius
+[https://chat.whatsapp.com/KUc6KZ4OTAcJDkIDDGFz4O]
 
-\ NEXUS-XMD\ *Dev🧑‍💻*
+\ PK DRILLER\ *Dev🧑‍💻*
 
-wa.me/+254785392165 ?text=Support!
+wa.me/+254794146821 ?text=Support!
 
 ⟣──────────────────⟢
 
@@ -58,7 +58,7 @@ await conn.sendMessage(
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363288304618280@newsletter',
-                        newsletterName: '『 🔥 NEXUS-XMD 🔥 』',
+                        newsletterName: '『 ☣️ NEXUS-XMD 🦖 』',
                         serverMessageId: 143
                     }
                 }

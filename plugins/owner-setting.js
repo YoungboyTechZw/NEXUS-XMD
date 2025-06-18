@@ -32,6 +32,46 @@ async (conn, mek, m, { from, isOwner, args, reply }) => {
     }
     reply("📢 Message broadcasted to all groups.");
 });
+// 3. Set Profile Picture
+cmd({
+    pattern: "setpp",
+    desc: "Set bot profile picture.",
+    category: "owner",
+    react: "🖼️",
+    filename: __filename
+},
+async (conn, mek, m, { from, isOwner, quoted, reply }) => {
+    if (!isOwner) return reply("❌ You are not the owner!");
+    if (!quoted || !quoted.message.imageMessage) return reply("❌ Please reply to an image.");
+    try {
+        const media = await conn.downloadMediaMessage(quoted);
+        await conn.updateProfilePicture(conn.user.jid, { url: media });
+        reply("🖼️ Profile picture updated successfully!");
+    } catch (error) {
+        reply(`❌ Error updating profile picture: ${error.message}`);
+    }
+});
+
+// 6. Clear All Chats
+cmd({
+    pattern: "clearchats",
+    desc: "Clear all chats from the bot.",
+    category: "owner",
+    react: "🧹",
+    filename: __filename
+},
+async (conn, mek, m, { from, isOwner, reply }) => {
+    if (!isOwner) return reply("❌ You are not the owner!");
+    try {
+        const chats = conn.chats.all();
+        for (const chat of chats) {
+            await conn.modifyChat(chat.jid, 'delete');
+        }
+        reply("🧹 All chats cleared successfully!");
+    } catch (error) {
+        reply(`❌ Error clearing chats: ${error.message}`);
+    }
+});
 
 // 8. Group JIDs List
 cmd({
@@ -47,3 +87,33 @@ async (conn, mek, m, { from, isOwner, reply }) => {
     const groupJids = Object.keys(groups).join('\n');
     reply(`📝 *Group JIDs:*\n\n${groupJids}`);
 });
+
+
+// delete 
+
+cmd({
+pattern: "delete",
+react: "❌",
+alias: ["del"],
+desc: "delete message",
+category: "group",
+use: '.del',
+filename: __filename
+},
+async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants,  isItzcp, groupAdmins, isBotAdmins, isAdmins, reply}) => {
+if (!isOwner ||  !isAdmins) return;
+try{
+if (!m.quoted) return reply(mg.notextfordel);
+const key = {
+            remoteJid: m.chat,
+            fromMe: false,
+            id: m.quoted.id,
+            participant: m.quoted.sender
+        }
+        await conn.sendMessage(m.chat, { delete: key })
+} catch(e) {
+console.log(e);
+reply('successful..👨‍💻✅')
+} 
+})
+

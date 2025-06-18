@@ -47,7 +47,7 @@ cmd({
     if (containsLink && config.ANTI_LINK_KICK === 'true') {
       await conn.sendMessage(from, { 'delete': m.key }, { 'quoted': m });
       await conn.sendMessage(from, {
-        'text': `> ⚠️ NEXUS-XMD Links are not allowed in this group.\n@${sender.split('@')[0]} has been removed. 🚫`,
+        'text': `⚠️ Links are not allowed in this group.\n@${sender.split('@')[0]} has been removed. 🚫`,
         'mentions': [sender]
       }, { 'quoted': m });
 

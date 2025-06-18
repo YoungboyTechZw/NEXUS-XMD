@@ -3,7 +3,7 @@ const config = require('../config');
 
 cmd({
     pattern: "owner",
-    react: "🔥", 
+    react: "✅", 
     desc: "Get owner number",
     category: "main",
     filename: __filename
@@ -29,24 +29,23 @@ async (conn, mek, m, { from }) => {
 
         // Send the owner contact message with image and audio
         await conn.sendMessage(from, {
-            image: { url: 'https://i.ibb.co/W4xhtdW8/nexus-xmd.jpg' }, // Image URL from your request
-            caption: `
-╭━〔 *🔥NEXUS-XMD🔥* 〕━┈⊷
+            image: { url: 'https://files.catbox.moe/ug8w1x.jpg' }, // Image URL from your request
+            caption: `╭━━〔 *NEXUS-XMD* 〕━━┈⊷
 ┃◈╭─────────────·๏
 ┃◈┃• *Here is the owner details*
 ┃◈┃• *Name* - ${ownerName}
 ┃◈┃• *Number* ${ownerNumber}
-┃◈┃• *Version*: 1.0.0
+┃◈┃• *Version*: 2.0.0 Beta
 ┃◈└───────────┈⊷
 ╰──────────────┈⊷
-> © PKDRILLER`, // Display the owner's details
+> © ᴘᴏᴡᴇʀᴇᴅ ʙʏ Nexus Tᴇᴄʜ`, // Display the owner's details
             contextInfo: {
                 mentionedJid: [`${ownerNumber.replace('+', '')}@s.whatsapp.net`], 
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363288304618280@newsletter',
-                    newsletterName: 'pkdriller 🪀',
+                    newsletterName: 'Nexus tech',
                     serverMessageId: 143
                 }            
             }
@@ -54,7 +53,7 @@ async (conn, mek, m, { from }) => {
 
         // Send audio as per your request
         await conn.sendMessage(from, {
-            audio: { url: 'https://github.com/bmb300/NOVA-XMD-DATA/raw/refs/heads/main/KingHans/HansTz.mp3' }, // Audio URL
+            audio: { url: 'https://files.catbox.moe/6j2z63.mp3' }, // Audio URL
             mimetype: 'audio/mp4',
             ptt: true
         }, { quoted: mek });

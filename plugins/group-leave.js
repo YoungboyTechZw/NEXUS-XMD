@@ -3,6 +3,8 @@ const config = require('../config')
 const { cmd, commands } = require('../command')
 
 
+// JawadTechX
+
 cmd({
     pattern: "leave",
     alias: ["left", "leftgc", "leavegc"],
